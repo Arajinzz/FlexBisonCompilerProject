@@ -1,0 +1,176 @@
+15
+14, 18
+
+20, 22
+
+22, 24
+
+18, 25
+
+25, 27
+
+28, 30
+
+programme correct
+nameVar : k	size : 1	type : int	key : 177680
+nameVar : u	size : 1	type : int	key : 177690
+nameVar : x	size : 1	type : int	key : 177693
+nameVar : y	size : 1	type : int	key : 177694
+nameVar : ff	size : 1	type : int	key : 863377
+nameVar : kk	size : 1	type : int	key : 863547
+nameVar : sp	size : 1	type : int	key : 863816
+nameVar : ss	size : 1	type : int	key : 863819
+nameVar : zz	size : 1	type : int	key : 864057
+1-(=,0, ,u)
+2-(=,9, ,zz)
+3-(*,9,8,T1)
+4-(-,T1,2,T2)
+5-(=,T2, ,ss)
+6-(*,u,zz,T3)
+7-(-,0,T3,T4)
+8-(=,T4, ,ff)
+9-(=, , ,x)
+10-(=, , ,y)
+11-(BGE,14,ff,4)
+12-(BLE,14,ff,9)
+13-(BR,15, , )
+14-(BGE,18,ff,3)
+15-(+,ss,zz,T5)
+16-(=,T5, ,ff)
+17-(=,9, ,kk)
+18-(BGE,25,ss,8)
+19-(=,99, ,zz)
+20-(BGE,22,ff,9)
+21-(=,999, ,kk)
+22-(BL,24,ff,23)
+23-(=,0, ,kk)
+24-(=,0, ,k)
+25-(BGE,27,ss,99)
+26-(=,0, ,kk)
+27-(=,9, ,ss)
+28-(BGE,30,ss,0)
+29-(=,0, ,sp)
+
+
+QUADS OPTIMIZED
+
+1-(=,0, ,u)
+2-(=,9, ,zz)
+3-(*,9,8,T2)
+4-(=,T2, ,ss)
+5-(=,u, ,ff)
+6-(BGE,7,ff,4)
+7-(BLE,7,ff,9)
+8-(BR,15, , )
+9-(BGE,11,ff,3)
+10-(=,9, ,kk)
+11-(BGE,16,ss,8)
+12-(BGE,14,ff,9)
+13-(=,999, ,kk)
+14-(BL,16,ff,23)
+15-(=,0, ,kk)
+16-(BGE,17,ss,99)
+17-(BGE,19,ss,0)
+18-(=,0, ,sp)
+
+
+CODE
+
+DATA SEGMENT
+	u DW ?
+	zz DW ?
+	T2 DW ?
+	ss DW ?
+	ff DW ?
+	kk DW ?
+	sp DW ?
+END DATA
+
+CODE SEGMENT
+1 : 
+	MOV AX, 0
+	MOV u, AX
+
+2 : 
+	MOV AX, 9
+	MOV zz, AX
+
+3 : 
+	MOV AX, 9
+	MOV BX, 8
+	MUL BX
+	MOV T2, AX
+
+4 : 
+	MOV AX, T2
+	MOV ss, AX
+
+5 : 
+	MOV AX, u
+	MOV ff, AX
+
+6 : 
+	MOV AX, ff
+	MOX BX, 4
+	CMP AX, BX
+	JGE 7
+
+7 : 
+	MOV AX, ff
+	MOX BX, 9
+	CMP AX, BX
+	JLE 7
+
+9 : 
+	MOV AX, ff
+	MOX BX, 3
+	CMP AX, BX
+	JGE 11
+
+10 : 
+	MOV AX, 9
+	MOV kk, AX
+
+11 : 
+	MOV AX, ss
+	MOX BX, 8
+	CMP AX, BX
+	JGE 16
+
+12 : 
+	MOV AX, ff
+	MOX BX, 9
+	CMP AX, BX
+	JGE 14
+
+13 : 
+	MOV AX, 999
+	MOV kk, AX
+
+14 : 
+	MOV AX, ff
+	MOX BX, 23
+	CMP AX, BX
+	JL 16
+
+15 : 
+	MOV AX, 0
+	MOV kk, AX
+
+16 : 
+	MOV AX, ss
+	MOX BX, 99
+	CMP AX, BX
+	JGE 17
+
+17 : 
+	MOV AX, ss
+	MOX BX, 0
+	CMP AX, BX
+	JGE 19
+
+18 : 
+	MOV AX, 0
+	MOV sp, AX
+
+END CODE

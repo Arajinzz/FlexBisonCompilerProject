@@ -1,0 +1,35 @@
+int u = 0, zz = 9
+
+
+ss = 9*8 - 2, ff = 0 - u * zz
+
+int x, y
+
+if(ff < 4 & ff > 9 | ff < 3)             :                
+
+	
+	ff = ss + zz
+
+
+	kk = 9
+
+		
+elif(ss < 8):
+	zz = 99
+
+
+	
+	if(ff < 9):
+		kk = 999
+	elif(ff>=23):
+		kk = 0
+
+	
+	else:
+		k = 0
+elif(ss < 99):
+	kk = 0
+else:
+	ss = 9
+	if(ss < 0):
+		sp = 0
